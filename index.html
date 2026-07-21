@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lamplight</title>
+        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/calculators.css">
+    </head>
+    <body>
+        <a href="#app" class="skip-link">Skip to content</a>
+        <div class="ambient-glow" aria-hidden="true"></div>
+
+        <header class="topbar" id="topbar">
+            <button class="brand" id="brandHome" aria-label="Lamplight home">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" aria-hidden="true">
+
+                </svg>
+                <span class="brand-word">Lamplight</span>
+            </button>
+            <div class="topbar-crumb" id="topbarCrumb"></div>
+            <div class="name-pill" id="namePill" hidden>
+                <span class="dot" aria-hidden="true"></span>
+                <span>Hi, <b id=namePillText></b></span>
+            </div>
+        </header>
+
+        <main id="app">
+            <section class="screen is-active" id="screen-welcome">
+                <div class="welcome-hero">
+                    <svg class="lamp-illustration" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <ellipse class="bulb-glow" cx="100" cy="88" rx="70" ry="60" fill="url(#glowGrad)"/>
+                        <defs>
+                            <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+                                <!-- american "colour" spelling for future reference -->
+                                <stop offset="0%" stop-color="#E3A857" stop-opacity="0.55"/>
+                                <stop offset="100%" stop-color="#E3A857" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+
+                    </svg>
+
+                    <p class="eyebrow">A quiet corner for exam prep</p>
+                    <h1>Practice on the <em>calculator</em> you'll <em>actually</em> use.</h1>
+                    <p class="lede">Tell us your exam, and we'll show you exactly which calculators are approved and then hand you a realistic working practice version, so nothing later on feels unfamiliar.</p>
+
+                    <form class="name-form" id="nameForm">
+                        <label for="nameInput">What should we call you?</label>
+                        <div class="name-field-row">
+                            <input type="text" id="nameInput" name="name" placeholder="Your first name" autocomplete="given-name" maxlength="30">
+                            <button type="submit" class="btn btn-primary" id="nameSubmit">Let's begin</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="screen screen-loading" id="screen-loading" aria-live="polite" aria-label="Loading">
+                <div class="loading-panel">
+                    <div class="loading-beads" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <p id="loadingMessage">One moment...</p>
+                </div>
+            </section>
+
+            <section class="screen" id="screen-boards">
+                <div class="screen-inner">
+                    <div class="screen-head">
+                        <p class="eyebrow">Step 1 of 2</p>
+                        <h2 id="boardsHeading">Where are you headed?</h2>
+                        <p>Pick your exam to see exactly which calculators are allowed.</p>
+                    </div>
+                    <div id="boardGroups"></div>
+                </div>
+            </section>
+
+            <section class="screen" id="screen-calcs">
+                <div class="screen-inner">
+                    <button class="back-link" id="btnBackToBoards">&larr; Change exam</button>
+                    <div class="screen-head">
+                        <p class="eyebrow">Step 2 of 2</p>
+                        <h2 id="calcsHeading">Approved calculators</h2>
+                        <p id="calcsSubhead"></p>
+                    </div>
+                    <div class="policy-note" id="policyNote"></div>
+                    <div class="calc-grid" id="calcGrid"></div>
+                    <p class="also-approved" id="alsoApproved"></p>
+                </div>
+            </section>
+
+            <section class="screen screen-calculator" id="screen-calculator">
+                <div class="calc-topstrip">
+                    <button class="back-link" id="btnBackToCalcs" style="margin:0;">&larr; Choose a different calculator</button>
+                    <div class="calc-topstrip-info" id="calcTopstripInfo"></div>
+                </div>
+                <div class="calc-desk" id="calcStage"></div>
+                <div class="calc-shadow-plate" aria-hidden="true"></div>
+                <p class="calc-encourage" id="calcEncourage"></p>
+            </section>
+        </main>
+
+        <!-- future-->
+        <script src="js/utils.js"></script>
+        <script src="js/math-engine.js"></script>
+        <script src="js/natural-display.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/calculators/classwiz.js"></script>
+        <script src="js/calculators/multiview.js"></script>
+        <script src="js/calculators/graphing.js"></script>
+        <script src="js/calculators/desmos.js"></script>
+        <script src="js/calculators/gre.js"></script>
+        <script src="js/calculators/gmat.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
