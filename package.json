@@ -1,0 +1,9 @@
+{
+    "name": "lamplight",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Practice tool for exam calculators",
+    "scripts": {
+        "dev": "npx serve ."
+    }
+}
