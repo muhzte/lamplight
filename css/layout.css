@@ -1,0 +1,24 @@
+.screen-loading{
+    min-height: 70vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+}
+
+.loading-beads{ display: flex; gap: 11px; }
+
+.loading-beads span{
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--amber);
+    opacity: .35;
+    animation: beadPulse 1.15s ease-in-out infinite;
+}
